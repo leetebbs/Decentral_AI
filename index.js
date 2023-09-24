@@ -14,7 +14,9 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 })
 
-app.post('/generateimage', (req, res) => {
+async function generateimage(req, res) {
+    
+
     const { prompt, size } = req.body;
     const imageSize =
       size === "small" ? "256x256" : size === "medium" ? "512x512" : "1024x1024";
@@ -43,6 +45,11 @@ app.post('/generateimage', (req, res) => {
         console.log(error.message);
       }
     }
+}
+
+
+app.post('/generateimage', (req, res) => {
+    generateimage(req, res);
 })
 
 
