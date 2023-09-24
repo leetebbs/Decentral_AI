@@ -6,7 +6,7 @@ const app = express();
 
 //parser for body data
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+// app.use(express.urlencoded({ extended: false }));
 
 // app.use('/openai', require('./routes/openaiRoutes'));
 
