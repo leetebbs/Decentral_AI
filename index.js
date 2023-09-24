@@ -10,6 +10,10 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/openai', require('./routes/openaiRoutes'));
 
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+})
+
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
 })  
